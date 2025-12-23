@@ -1,0 +1,34 @@
+spring:
+  datasource:
+    username: root
+    password: jdy200255
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/drny?useSSL=false
+  # Redis 配置
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      password:  # 如果有密码请填写
+      database: 0
+      timeout: 3000
+      lettuce:
+        pool:
+          max-active: 8 # 连接池在给定时间点可分配的最大连接数。使用负值表示无限制。
+          max-idle: 8
+          min-idle: 0
+          max-wait: -1
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+server:
+  port: 80
+
+logging:
+  level:
+    xyz:
+      jdynb:
+        mapper: debug,
+        service: info,
+        controller: info

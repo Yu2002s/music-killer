@@ -1,0 +1,101 @@
+spring:
+  application:
+    name: dy-movies
+  profiles:
+    active: @env@
+  servlet:
+    multipart:
+      # 最大上传文件大小
+      max-file-size: 2MB
+  # jackson:
+    # mapper:
+      # accept-case-insensitive-properties: true
+
+# mybatis 配置
+mybatis:
+  # mapper xml 路径
+  mapper-locations: classpath:mapper/*.xml
+  # 类型别名
+  type-aliases-package: xyz.jdynb.entity
+
+# springdoc-openapi项目配置
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html # swagger 访问页面地址
+    tags-sorter: alpha
+    operations-sorter: alpha
+  api-docs:
+    path: /v3/api-docs
+  group-configs:
+    - group: 'default'
+      paths-to-match: '/**'
+      packages-to-scan:
+        - xyz.jdynb.controller # 扫描 controller 包
+# knife4j的增强配置，不需要增强可以不配
+knife4j:
+  enable: true # 开启增强配置
+  setting:
+    language: zh_cn # 语言中文
+
+# jwt 配置
+jwt:
+  user-secret-key: jdy200255... # jwt token生成的秘钥
+  user-token-name: Authorization # 认证请求头的名称
+  user-ttl: 30d # 用户token过期时间
+
+api:
+  auth:
+    salt: MusicKillerNativeSalt
+
+# 上传配置
+upload:
+  url: https://img.ink/api/upload # 上传地址
+  token: f95f2153885207e45f70b02315073812 # 上传 token
+
+# mybatis-plus 配置
+mybatis-plus:
+  global-config:
+    db-config:
+      logic-delete-field: deleted # 全局逻辑删除字段名
+      logic-delete-value: 1 # 1表示已删除
+      logic-not-delete-value: 0 # 0 未删除
+
+# 酷我接口配置
+kuwo:
+  url: https://www.kuwo.cn # 酷我域名
+  key: Hm_Iuvt_cdb524f42f23cer9b268564v7y735ewrq2324
+  value: AFBMJdz2jxPMfnTtSGCx5ret6tkrRG4m
+  cookie: Hm_lvt_cdb524f42f0ce19b169a8071123a4797=1762436461; HMACCOUNT=6488AFA03FCE8597; _ga=GA1.2.1714626163.1762436461; _gid=GA1.2.1726759435.1762436461; Hm_lpvt_cdb524f42f0ce19b169a8071123a4797=1762439437; _gat=1; _ga_ETPBRPM9ML=GS2.2.s1762438871$o2$g1$t1762439437$j60$l0$h0; Hm_Iuvt_cdb524f42f23cer9b268564v7y735ewrq2324=AFBMJdz2jxPMfnTtSGCx5ret6tkrRG4m
+  play: # 播放地址需要的一些参数组合
+    f: web
+    source: kwplayercar_ar_6.0.0.9_B_jiakong_vh.apk
+    from: PC
+    type: convert_url_with_sign
+    br: 128k
+    rid: 0
+    user: C_APK_guanwang_12609069939969033731
+  album-host: 'http://img2.kuwo.cn/star/albumcover/' # 专辑图片域名地址
+  artist-host: 'https://img1.kuwo.cn/star/starheads/' # 歌手图片域名地址
+
+# retrofit 配置
+retrofit:
+  global-log: # 全局日志配置
+    enable: true # 开启日志
+    log-level: info # 日志等级
+    log-strategy: basic # 日志策略
+    aggregate: true # 是否聚合打印日志
+
+  global-retry: # 全局重试
+    enable: true # 开启全局重试
+    interval-ms: 100 # 重试间隔时间
+    max-retries: 2 # 最大重试时间
+    retry-rules: # 重试触发规则
+      - response_status_not_2xx # 响应码状态不正确
+      - occur_exception # 出现异常时
+  global-timeout: # 全局超时配置
+    call-timeout-ms: 0 # 全局完整调用超时时间
+    read-timeout-ms: 10000 # 读取超时时间
+    write-timeout-ms: 10000 # 写入超时时间
+    connect-timeout-ms: 10000 # 连接超时时间
+  # 全局转换器：默认已经配置好，使用默认配置
+  # global-converter-factories: com.github.lianjiatech.retrofit.spring.boot.core.BasicTypeConverterFactory

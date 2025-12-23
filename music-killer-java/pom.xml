@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.5.6</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>xyz.jdynb</groupId>
+    <artifactId>music-killer</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>music-killer</name>
+    <description>music-killer</description>
+    <packaging>pom</packaging>
+
+    <!-- 管理子模块 -->
+    <modules>
+        <!-- web 服务模块 -->
+        <module>music-killer-server</module>
+        <module>music-killer-pojo</module>
+        <module>music-killer-common</module>
+    </modules>
+
+    <properties>
+        <java.version>17</java.version>
+        <mybatis.spring.version>3.0.5</mybatis.spring.version>
+
+        <dy.movies.common.version>0.0.1-SNAPSHOT</dy.movies.common.version>
+        <dy.movies.pojo.version>0.0.1-SNAPSHOT</dy.movies.pojo.version>
+        <jjwt.version>0.9.1</jjwt.version>
+        <jaxb.api.version>2.3.1</jaxb.api.version>
+        <hutool.version>5.8.38</hutool.version>
+        <knife4j.version>4.4.0</knife4j.version>
+        <springdoc.version>2.8.4</springdoc.version>
+        <mybatis.plus.spring.version>3.5.14</mybatis.plus.spring.version>
+        <jsoup.version>1.17.2</jsoup.version>
+        <polyglot.version>24.1.1</polyglot.version>
+        <retrofit.version>3.2.0</retrofit.version>
+    </properties>
+
+    <!-- 全局公共的依赖 -->
+    <dependencies>
+
+    </dependencies>
+
+    <!-- 依赖管理，统一定义依赖的版本号 -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis.spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter-test</artifactId>
+                <version>${mybatis.spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>xyz.jdynb</groupId>
+                <artifactId>music-killer-common</artifactId>
+                <version>${dy.movies.common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>xyz.jdynb</groupId>
+                <artifactId>music-killer-pojo</artifactId>
+                <version>${dy.movies.pojo.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>${jjwt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.xml.bind</groupId>
+                <artifactId>jaxb-api</artifactId>
+                <version>${jaxb.api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-bom</artifactId>
+                <version>${hutool.version}</version>
+                <type>pom</type>
+                <!-- 注意这里是import -->
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
+                <version>${knife4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+                <version>${springdoc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-bom</artifactId>
+                <version>${mybatis.plus.spring.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.jsoup</groupId>
+                <artifactId>jsoup</artifactId>
+                <version>${jsoup.version}</version>
+            </dependency>
+            <!--<dependency>
+                <groupId>org.graalvm.polyglot</groupId>
+                <artifactId>polyglot</artifactId>
+                <version>${polyglot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.graalvm.polyglot</groupId>
+                <artifactId>js</artifactId>
+                <version>${polyglot.version}</version>
+                <type>pom</type>
+            </dependency>-->
+            <dependency>
+                <groupId>com.github.lianjiatech</groupId>
+                <artifactId>retrofit-spring-boot-starter</artifactId>
+                <version>${retrofit.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>
