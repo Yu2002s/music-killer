@@ -17,12 +17,12 @@
 
 ## 截图
 
-![alt text](./screenshots/微信图片_20251223165551_212_317.jpg)
+<img src="./screenshots/微信图片_20251223165551_212_317.jpg" alt="alt text" style="width: 250px;" />
 
-![alt text](./screenshots/微信图片_20251223165552_213_317.jpg)
+<img src="./screenshots/微信图片_20251223165552_213_317.jpg" alt="alt text" style="width: 280px" />
 
-![alt text](./screenshots/微信图片_20251223165548_209_317.jpg)
+<img src="./screenshots/微信图片_20251223165548_209_317.jpg" alt="alt text" style="width: 280px" />
 
-![alt text](./screenshots/微信图片_20251223165549_210_317.jpg)
+<img src="./screenshots/微信图片_20251223165549_210_317.jpg" alt="alt text" style="width: 280px" />
 
-![alt text](./screenshots/微信图片_20251223165550_211_317.jpg)
+<img src="./screenshots/微信图片_20251223165550_211_317.jpg" alt="alt text" style="width: 280px" />
